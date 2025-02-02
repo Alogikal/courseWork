@@ -1,22 +1,19 @@
 import java.util.Objects;
 
 public class Employee {
-    private static int idCounter = 1;
 
-    private int id;
+    private static int idCounter;
+    private int id = idCounter;
     private String fullName;
     private int department;
     private double salary;
 
-    public Employee(int id, double salary, int depatment, String fullName) {
-        this.id = id;
+    public Employee(double salary, int depatment, String fullName) {
         this.salary = salary;
         this.department = depatment;
         this.fullName = fullName;
-    }
+        idCounter++;
 
-    public static int getIdCounter() {
-        return idCounter;
     }
 
     public String getFullName() {
@@ -51,6 +48,7 @@ public class Employee {
         return id == employee.id && department == employee.department && Double.compare(salary, employee.salary) == 0 && Objects.equals(fullName, employee.fullName);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(id, fullName, department, salary);
@@ -61,4 +59,5 @@ public class Employee {
         return  fullName + " " + salary;
     }
 }
+
 

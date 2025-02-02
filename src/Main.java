@@ -1,3 +1,5 @@
+import javax.crypto.spec.PSource;
+import java.util.Arrays;
 
 public class Main {
 
@@ -6,11 +8,11 @@ public class Main {
     public static void main(String[] args) {
         // Добавление записей в "хранилище"
 
-        employees[0] = new Employee(1, 120000, 1, "Игорь Иванов");
-        employees[1] = new Employee(2, 67323.50, 2, "Анна Анатольевна");
-        employees[2] = new Employee(3, 62000.50, 2, "Лиськова Ирина");
-        employees[3] = new Employee(4, 32000, 2, "Павлова Юлия");
-        employees[4] = new Employee(5, 150000, 2, "Петлер Андрей");
+        employees[0] = new Employee(100000, 1,  "Игорь Иванов");
+        employees[1] = new Employee(200000, 6, "Анна Анатольевна");
+        employees[2] = new Employee(300000, 6,  "Лиськова Ирина");
+        employees[3] = new Employee(4000, 3, "Павлова Юлия");
+        employees[4] = new Employee(500, 1,  "Петлер Андрей");
 
         printAllEmployees();
         System.out.println("Общая сумма ежемесячных расходов на заработную плату: " + calculateTotalSalary());
@@ -20,6 +22,8 @@ public class Main {
         printAllEmployeeNames();
 
     }
+
+
     private static Employee[] employees = new Employee[10];
 
     public static void printAllEmployees() {
